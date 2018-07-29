@@ -66,41 +66,22 @@
       "payable": false,
       "stateMutability": "nonpayable",
       "type": "function"
-    },
-    {
-      "constant": true,
-      "inputs": [
-        {
-          "name": "_steward",
-          "type": "address"
-        }
-      ],
-      "name": "get",
-      "outputs": [
-        {
-          "name": "",
-          "type": "string"
-        }
-      ],
-      "payable": false,
-      "stateMutability": "view",
-      "type": "function"
     }
   ],
-  "bytecode": "0x608060405234801561001057600080fd5b506106af806100206000396000f30060806040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634ed3885e14610072578063949d225d146100db578063c2bc2efc14610106578063e1e322ed146101c2578063edf26d9b1461027e575b600080fd5b34801561007e57600080fd5b506100d9600480360381019080803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192905050506102eb565b005b3480156100e757600080fd5b506100f0610403565b6040518082815260200191505060405180910390f35b34801561011257600080fd5b50610147600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610410565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561018757808201518184015260208101905061016c565b50505050905090810190601f1680156101b45780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156101ce57600080fd5b50610203600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506104f0565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610243578082015181840152602081019050610228565b50505050905090810190601f1680156102705780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561028a57600080fd5b506102a9600480360381019080803590602001909291905050506105a0565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080546001816001161561010002031660029004905014156103ad5760013390806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505b806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002090805190602001906103ff9291906105de565b5050565b6000600180549050905090565b60606000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104e45780601f106104b9576101008083540402835291602001916104e4565b820191906000526020600020905b8154815290600101906020018083116104c757829003601f168201915b50505050509050919050565b60006020528060005260406000206000915090508054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105985780601f1061056d57610100808354040283529160200191610598565b820191906000526020600020905b81548152906001019060200180831161057b57829003601f168201915b505050505081565b6001818154811015156105af57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061061f57805160ff191683800117855561064d565b8280016001018555821561064d579182015b8281111561064c578251825591602001919060010190610631565b5b50905061065a919061065e565b5090565b61068091905b8082111561067c576000816000905550600101610664565b5090565b905600a165627a7a72305820d43154989578ec6a0c6cde17ffa184a1ffb4c64e8ecc17c537f6e3950c97f7020029",
-  "deployedBytecode": "0x60806040526004361061006d576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634ed3885e14610072578063949d225d146100db578063c2bc2efc14610106578063e1e322ed146101c2578063edf26d9b1461027e575b600080fd5b34801561007e57600080fd5b506100d9600480360381019080803590602001908201803590602001908080601f01602080910402602001604051908101604052809392919081815260200183838082843782019150505050505091929192905050506102eb565b005b3480156100e757600080fd5b506100f0610403565b6040518082815260200191505060405180910390f35b34801561011257600080fd5b50610147600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610410565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561018757808201518184015260208101905061016c565b50505050905090810190601f1680156101b45780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156101ce57600080fd5b50610203600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506104f0565b6040518080602001828103825283818151815260200191508051906020019080838360005b83811015610243578082015181840152602081019050610228565b50505050905090810190601f1680156102705780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b34801561028a57600080fd5b506102a9600480360381019080803590602001909291905050506105a0565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080546001816001161561010002031660029004905014156103ad5760013390806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505b806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002090805190602001906103ff9291906105de565b5050565b6000600180549050905090565b60606000808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000208054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156104e45780601f106104b9576101008083540402835291602001916104e4565b820191906000526020600020905b8154815290600101906020018083116104c757829003601f168201915b50505050509050919050565b60006020528060005260406000206000915090508054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156105985780601f1061056d57610100808354040283529160200191610598565b820191906000526020600020905b81548152906001019060200180831161057b57829003601f168201915b505050505081565b6001818154811015156105af57fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061061f57805160ff191683800117855561064d565b8280016001018555821561064d579182015b8281111561064c578251825591602001919060010190610631565b5b50905061065a919061065e565b5090565b61068091905b8082111561067c576000816000905550600101610664565b5090565b905600a165627a7a72305820d43154989578ec6a0c6cde17ffa184a1ffb4c64e8ecc17c537f6e3950c97f7020029",
-  "sourceMap": "25:466:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:466:0;;;;;;;",
-  "deployedSourceMap": "25:466:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;211:176;;8:9:-1;5:2;;;30:1;27;20:12;5:2;211:176:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;128:79;;8:9:-1;5:2;;;30:1;27;20:12;5:2;128:79:0;;;;;;;;;;;;;;;;;;;;;;;391:98;;8:9:-1;5:2;;;30:1;27;20:12;5:2;391:98:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;391:98:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;48:45;;8:9:-1;5:2;;;30:1;27;20:12;5:2;48:45:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;48:45:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;97:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;97:26:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;211:176;299:1;265:10;:22;276:10;265:22;;;;;;;;;;;;;;;259:36;;;;;;;;;;;;;;;;:41;255:88;;;310:9;325:10;310:26;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;310:26:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;255:88;373:9;348:10;:22;359:10;348:22;;;;;;;;;;;;;;;:34;;;;;;;;;;;;:::i;:::-;;211:176;:::o;128:79::-;165:4;186:9;:16;;;;179:23;;128:79;:::o;391:98::-;443:6;464:10;:20;475:8;464:20;;;;;;;;;;;;;;;457:27;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;391:98;;;:::o;48:45::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;97:26::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;25:466::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "pragma solidity 0.4.24;\n\ncontract Stewards {\n\n  mapping (address => string) public ipfsHashes;\n  address[] public addresses;\n\n  function size() public view returns (uint) {\n      return addresses.length;\n  }\n\n  function set(string _ipfsHash) public {\n    if (bytes(ipfsHashes[msg.sender]).length == 0) {\n      addresses.push(msg.sender);\n    }\n    ipfsHashes[msg.sender] = _ipfsHash;\n  }\n\n  function get(address _steward) public view returns (string) {\n    return ipfsHashes[_steward];\n  }\n}\n",
+  "bytecode": "0x608060405234801561001057600080fd5b50610508806100206000396000f300608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634ed3885e14610067578063949d225d146100d0578063e1e322ed146100fb578063edf26d9b146101b7575b600080fd5b34801561007357600080fd5b506100ce600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290505050610224565b005b3480156100dc57600080fd5b506100e561033c565b6040518082815260200191505060405180910390f35b34801561010757600080fd5b5061013c600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610349565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561017c578082015181840152602081019050610161565b50505050905090810190601f1680156101a95780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156101c357600080fd5b506101e2600480360381019080803590602001909291905050506103f9565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080546001816001161561010002031660029004905014156102e65760013390806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505b806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000209080519060200190610338929190610437565b5050565b6000600180549050905090565b60006020528060005260406000206000915090508054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103f15780601f106103c6576101008083540402835291602001916103f1565b820191906000526020600020905b8154815290600101906020018083116103d457829003601f168201915b505050505081565b60018181548110151561040857fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061047857805160ff19168380011785556104a6565b828001600101855582156104a6579182015b828111156104a557825182559160200191906001019061048a565b5b5090506104b391906104b7565b5090565b6104d991905b808211156104d55760008160009055506001016104bd565b5090565b905600a165627a7a72305820286089940e114812166845fcde600f471b119d352dd61e9bc4cd65862a8ab12e0029",
+  "deployedBytecode": "0x608060405260043610610062576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680634ed3885e14610067578063949d225d146100d0578063e1e322ed146100fb578063edf26d9b146101b7575b600080fd5b34801561007357600080fd5b506100ce600480360381019080803590602001908201803590602001908080601f0160208091040260200160405190810160405280939291908181526020018383808284378201915050505050509192919290505050610224565b005b3480156100dc57600080fd5b506100e561033c565b6040518082815260200191505060405180910390f35b34801561010757600080fd5b5061013c600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610349565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561017c578082015181840152602081019050610161565b50505050905090810190601f1680156101a95780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b3480156101c357600080fd5b506101e2600480360381019080803590602001909291905050506103f9565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60008060003373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002080546001816001161561010002031660029004905014156102e65760013390806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550505b806000803373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000209080519060200190610338929190610437565b5050565b6000600180549050905090565b60006020528060005260406000206000915090508054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103f15780601f106103c6576101008083540402835291602001916103f1565b820191906000526020600020905b8154815290600101906020018083116103d457829003601f168201915b505050505081565b60018181548110151561040857fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061047857805160ff19168380011785556104a6565b828001600101855582156104a6579182015b828111156104a557825182559160200191906001019061048a565b5b5090506104b391906104b7565b5090565b6104d991905b808211156104d55760008160009055506001016104bd565b5090565b905600a165627a7a72305820286089940e114812166845fcde600f471b119d352dd61e9bc4cd65862a8ab12e0029",
+  "sourceMap": "25:364:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:364:0;;;;;;;",
+  "deployedSourceMap": "25:364:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;211:176;;8:9:-1;5:2;;;30:1;27;20:12;5:2;211:176:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;128:79;;8:9:-1;5:2;;;30:1;27;20:12;5:2;128:79:0;;;;;;;;;;;;;;;;;;;;;;;48:45;;8:9:-1;5:2;;;30:1;27;20:12;5:2;48:45:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;48:45:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;97:26;;8:9:-1;5:2;;;30:1;27;20:12;5:2;97:26:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;211:176;299:1;265:10;:22;276:10;265:22;;;;;;;;;;;;;;;259:36;;;;;;;;;;;;;;;;:41;255:88;;;310:9;325:10;310:26;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;310:26:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;255:88;373:9;348:10;:22;359:10;348:22;;;;;;;;;;;;;;;:34;;;;;;;;;;;;:::i;:::-;;211:176;:::o;128:79::-;165:4;186:9;:16;;;;179:23;;128:79;:::o;48:45::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;97:26::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;25:364::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity 0.4.24;\n\ncontract Stewards {\n\n  mapping (address => string) public ipfsHashes;\n  address[] public addresses;\n\n  function size() public view returns (uint) {\n      return addresses.length;\n  }\n\n  function set(string _ipfsHash) public {\n    if (bytes(ipfsHashes[msg.sender]).length == 0) {\n      addresses.push(msg.sender);\n    }\n    ipfsHashes[msg.sender] = _ipfsHash;\n  }\n}\n",
   "sourcePath": "/Users/rcurrie/code/cgt/dapp/contracts/Stewards.sol",
   "ast": {
     "absolutePath": "/Users/rcurrie/code/cgt/dapp/contracts/Stewards.sol",
     "exportedSymbols": {
       "Stewards": [
-        61
+        49
       ]
     },
-    "id": 62,
+    "id": 50,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -119,9 +100,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 61,
+        "id": 49,
         "linearizedBaseContracts": [
-          61
+          49
         ],
         "name": "Stewards",
         "nodeType": "ContractDefinition",
@@ -131,7 +112,7 @@
             "id": 5,
             "name": "ipfsHashes",
             "nodeType": "VariableDeclaration",
-            "scope": 61,
+            "scope": 49,
             "src": "48:45:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -176,7 +157,7 @@
             "id": 8,
             "name": "addresses",
             "nodeType": "VariableDeclaration",
-            "scope": 61,
+            "scope": 49,
             "src": "97:26:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -298,7 +279,7 @@
               ],
               "src": "164:6:0"
             },
-            "scope": 61,
+            "scope": 49,
             "src": "128:79:0",
             "stateMutability": "view",
             "superFunction": null,
@@ -351,7 +332,7 @@
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 76,
+                                "referencedDeclaration": 64,
                                 "src": "276:3:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
@@ -479,7 +460,7 @@
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 76,
+                                "referencedDeclaration": 64,
                                 "src": "325:3:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
@@ -588,7 +569,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 76,
+                          "referencedDeclaration": 64,
                           "src": "359:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -695,162 +676,27 @@
               "parameters": [],
               "src": "249:0:0"
             },
-            "scope": 61,
+            "scope": 49,
             "src": "211:176:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 59,
-              "nodeType": "Block",
-              "src": "451:38:0",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "baseExpression": {
-                      "argumentTypes": null,
-                      "id": 55,
-                      "name": "ipfsHashes",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 5,
-                      "src": "464:10:0",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
-                        "typeString": "mapping(address => string storage ref)"
-                      }
-                    },
-                    "id": 57,
-                    "indexExpression": {
-                      "argumentTypes": null,
-                      "id": 56,
-                      "name": "_steward",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 50,
-                      "src": "475:8:0",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_address",
-                        "typeString": "address"
-                      }
-                    },
-                    "isConstant": false,
-                    "isLValue": true,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "nodeType": "IndexAccess",
-                    "src": "464:20:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage",
-                      "typeString": "string storage ref"
-                    }
-                  },
-                  "functionReturnParameters": 54,
-                  "id": 58,
-                  "nodeType": "Return",
-                  "src": "457:27:0"
-                }
-              ]
-            },
-            "documentation": null,
-            "id": 60,
-            "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": true,
-            "modifiers": [],
-            "name": "get",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 51,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 50,
-                  "name": "_steward",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 60,
-                  "src": "404:16:0",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 49,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "404:7:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "403:18:0"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 54,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 53,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 60,
-                  "src": "443:6:0",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 52,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "443:6:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "442:8:0"
-            },
-            "scope": 61,
-            "src": "391:98:0",
-            "stateMutability": "view",
-            "superFunction": null,
-            "visibility": "public"
           }
         ],
-        "scope": 62,
-        "src": "25:466:0"
+        "scope": 50,
+        "src": "25:364:0"
       }
     ],
-    "src": "0:492:0"
+    "src": "0:390:0"
   },
   "legacyAST": {
     "absolutePath": "/Users/rcurrie/code/cgt/dapp/contracts/Stewards.sol",
     "exportedSymbols": {
       "Stewards": [
-        61
+        49
       ]
     },
-    "id": 62,
+    "id": 50,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -869,9 +715,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 61,
+        "id": 49,
         "linearizedBaseContracts": [
-          61
+          49
         ],
         "name": "Stewards",
         "nodeType": "ContractDefinition",
@@ -881,7 +727,7 @@
             "id": 5,
             "name": "ipfsHashes",
             "nodeType": "VariableDeclaration",
-            "scope": 61,
+            "scope": 49,
             "src": "48:45:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -926,7 +772,7 @@
             "id": 8,
             "name": "addresses",
             "nodeType": "VariableDeclaration",
-            "scope": 61,
+            "scope": 49,
             "src": "97:26:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -1048,7 +894,7 @@
               ],
               "src": "164:6:0"
             },
-            "scope": 61,
+            "scope": 49,
             "src": "128:79:0",
             "stateMutability": "view",
             "superFunction": null,
@@ -1101,7 +947,7 @@
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 76,
+                                "referencedDeclaration": 64,
                                 "src": "276:3:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
@@ -1229,7 +1075,7 @@
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 76,
+                                "referencedDeclaration": 64,
                                 "src": "325:3:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
@@ -1338,7 +1184,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 76,
+                          "referencedDeclaration": 64,
                           "src": "359:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1445,166 +1291,37 @@
               "parameters": [],
               "src": "249:0:0"
             },
-            "scope": 61,
+            "scope": 49,
             "src": "211:176:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
-          },
-          {
-            "body": {
-              "id": 59,
-              "nodeType": "Block",
-              "src": "451:38:0",
-              "statements": [
-                {
-                  "expression": {
-                    "argumentTypes": null,
-                    "baseExpression": {
-                      "argumentTypes": null,
-                      "id": 55,
-                      "name": "ipfsHashes",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 5,
-                      "src": "464:10:0",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_mapping$_t_address_$_t_string_storage_$",
-                        "typeString": "mapping(address => string storage ref)"
-                      }
-                    },
-                    "id": 57,
-                    "indexExpression": {
-                      "argumentTypes": null,
-                      "id": 56,
-                      "name": "_steward",
-                      "nodeType": "Identifier",
-                      "overloadedDeclarations": [],
-                      "referencedDeclaration": 50,
-                      "src": "475:8:0",
-                      "typeDescriptions": {
-                        "typeIdentifier": "t_address",
-                        "typeString": "address"
-                      }
-                    },
-                    "isConstant": false,
-                    "isLValue": true,
-                    "isPure": false,
-                    "lValueRequested": false,
-                    "nodeType": "IndexAccess",
-                    "src": "464:20:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage",
-                      "typeString": "string storage ref"
-                    }
-                  },
-                  "functionReturnParameters": 54,
-                  "id": 58,
-                  "nodeType": "Return",
-                  "src": "457:27:0"
-                }
-              ]
-            },
-            "documentation": null,
-            "id": 60,
-            "implemented": true,
-            "isConstructor": false,
-            "isDeclaredConst": true,
-            "modifiers": [],
-            "name": "get",
-            "nodeType": "FunctionDefinition",
-            "parameters": {
-              "id": 51,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 50,
-                  "name": "_steward",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 60,
-                  "src": "404:16:0",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_address",
-                    "typeString": "address"
-                  },
-                  "typeName": {
-                    "id": 49,
-                    "name": "address",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "404:7:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_address",
-                      "typeString": "address"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "403:18:0"
-            },
-            "payable": false,
-            "returnParameters": {
-              "id": 54,
-              "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 53,
-                  "name": "",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 60,
-                  "src": "443:6:0",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_string_memory_ptr",
-                    "typeString": "string"
-                  },
-                  "typeName": {
-                    "id": 52,
-                    "name": "string",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "443:6:0",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_string_storage_ptr",
-                      "typeString": "string"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "442:8:0"
-            },
-            "scope": 61,
-            "src": "391:98:0",
-            "stateMutability": "view",
-            "superFunction": null,
-            "visibility": "public"
           }
         ],
-        "scope": 62,
-        "src": "25:466:0"
+        "scope": 50,
+        "src": "25:364:0"
       }
     ],
-    "src": "0:492:0"
+    "src": "0:390:0"
   },
   "compiler": {
     "name": "solc",
     "version": "0.4.24+commit.e67f0147.Emscripten.clang"
   },
   "networks": {
+    "4": {
+      "events": {},
+      "links": {},
+      "address": "0x1a897b945a2c33a7e82bd444331ef3f60497607e",
+      "transactionHash": "0x7e4855b3ab515d445d8d34dd11af930fbb915e05830e361c84d5e4c2658c7947"
+    },
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x74b1390336ee7ab5730579d3fa70a2e831a5c118",
-      "transactionHash": "0xe2aba65d95ca72d0315345ba9969192516533c4668911152314f4ee03f63877e"
+      "address": "0x9822e7868d07c3b1b2864bb9cd3baafe8ffb18fa",
+      "transactionHash": "0xe4a39299df188164ead29f50ae26be436bd6c5bff6070d812b290df0246e40dd"
     }
   },
   "schemaVersion": "2.0.1",
-  "updatedAt": "2018-07-28T16:19:43.604Z"
+  "updatedAt": "2018-07-29T05:02:07.442Z"
 }

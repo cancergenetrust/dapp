@@ -11,6 +11,7 @@ import {
   NavLink,
 } from 'reactstrap';
 import Loader from 'react-loader'
+
 import StewardsContract from '../build/contracts/Stewards.json'
 import getWeb3 from './getWeb3'
 
@@ -36,15 +37,15 @@ class App extends React.Component {
   async componentWillMount() {
     try {
       this.setState({ web3: await getWeb3() })
-      console.log(`My account: ${this.state.web3.eth.accounts[0]}`)
-      this.setState({ address: this.state.web3.eth.accounts[0] })
+      // console.log(`My account: ${this.state.web3.eth.accounts[0]}`)
+      // this.setState({ address: this.state.web3.eth.accounts[0] })
       stewardsContract.setProvider(this.state.web3.currentProvider)
 
       this.setState({ contract: await stewardsContract.deployed() })
       console.log(`Stewards contract address: ${this.state.contract.address}`)
 
-      this.setState({ ipfsHash: await this.state.contract.ipfsHashes.call(this.state.web3.eth.accounts[0]) })
-      console.log(`My current hash: ${this.state.ipfsHash}`)
+      // this.setState({ ipfsHash: await this.state.contract.ipfsHashes.call(this.state.web3.eth.accounts[0]) })
+      // console.log(`My current hash: ${this.state.ipfsHash}`)
 
       const numStewards = await this.state.contract.size.call()
       console.log(`Found ${numStewards.toNumber()} stewards`)

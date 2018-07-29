@@ -10,7 +10,8 @@ const resolveWeb3 = (resolve) => {
     resolve(web3)
   } else {
     // Fallback to localhost if no web3 injection.
-    const provider = new Web3.providers.HttpProvider(`http://localhost:9545`)
+    // const provider = new Web3.providers.HttpProvider(`http://localhost:9545`)
+    const provider = new Web3.providers.HttpProvider(`https://rinkeby.infura.io/`)
     web3 = new Web3(provider)
     console.log(`No web3 instance injected, using Local web3.`)
     resolve(web3)
