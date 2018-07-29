@@ -1,0 +1,2 @@
+migrate:
+	truffle migrate --reset

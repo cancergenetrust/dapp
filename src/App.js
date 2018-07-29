@@ -1,91 +1,108 @@
-import React, { Component } from 'react'
-import SimpleStorageContract from '../build/contracts/SimpleStorage.json'
-import getWeb3 from './utils/getWeb3'
+import React from 'react'
+import {
+  Container, 
+  Table,
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from 'reactstrap';
+import Loader from 'react-loader'
+import StewardsContract from '../build/contracts/Stewards.json'
+import getWeb3 from './getWeb3'
 
-import './css/oswald.css'
-import './css/open-sans.css'
-import './css/pure-min.css'
-import './App.css'
+const truffleContract = require('truffle-contract')
+const stewardsContract = truffleContract(StewardsContract)
 
-class App extends Component {
+const IPFS = require('ipfs-mini');
+
+class App extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      storageValue: 0,
-      web3: null
+			loaded: false,
+      web3: null,
+      contract: null,
+      address: null,
+      ipfsHash: null,
+      stewards: null,
     }
   }
 
-  componentWillMount() {
-    // Get network provider and web3 instance.
-    // See utils/getWeb3 for more info.
+  async componentWillMount() {
+    try {
+      this.setState({ web3: await getWeb3() })
+      console.log(`My account: ${this.state.web3.eth.accounts[0]}`)
+      this.setState({ address: this.state.web3.eth.accounts[0] })
+      stewardsContract.setProvider(this.state.web3.currentProvider)
 
-    getWeb3
-    .then(results => {
-      this.setState({
-        web3: results.web3
-      })
+      this.setState({ contract: await stewardsContract.deployed() })
+      console.log(`Stewards contract address: ${this.state.contract.address}`)
 
-      // Instantiate contract once web3 provided.
-      this.instantiateContract()
-    })
-    .catch(() => {
-      console.log('Error finding web3.')
-    })
-  }
+      this.setState({ ipfsHash: await this.state.contract.ipfsHashes.call(this.state.web3.eth.accounts[0]) })
+      console.log(`My current hash: ${this.state.ipfsHash}`)
 
-  instantiateContract() {
-    /*
-     * SMART CONTRACT EXAMPLE
-     *
-     * Normally these functions would be called in the context of a
-     * state management library, but for convenience I've placed them here.
-     */
+      const numStewards = await this.state.contract.size.call()
+      console.log(`Found ${numStewards.toNumber()} stewards`)
+      const stewards = []
+      for(var i=0; i < numStewards.toNumber(); i++) {
+        const address = await this.state.contract.addresses(i)
+        const ipfsHash = await this.state.contract.ipfsHashes(address)
+        stewards.push({address: address, ipfsHash: ipfsHash})
+      }
+      this.setState({ stewards })
 
-    const contract = require('truffle-contract')
-    const simpleStorage = contract(SimpleStorageContract)
-    simpleStorage.setProvider(this.state.web3.currentProvider)
+      const ipfs = new IPFS({host: 'ipfs.infura.io', port: 5001, protocol: 'https'});
+      this.setState({ipfs: ipfs});
 
-    // Declaring this for later so we can chain functions on SimpleStorage.
-    var simpleStorageInstance
-
-    // Get accounts.
-    this.state.web3.eth.getAccounts((error, accounts) => {
-      simpleStorage.deployed().then((instance) => {
-        simpleStorageInstance = instance
-
-        // Stores a given value, 5 by default.
-        return simpleStorageInstance.set(5, {from: accounts[0]})
-      }).then((result) => {
-        // Get the value from the contract to prove it worked.
-        return simpleStorageInstance.get.call(accounts[0])
-      }).then((result) => {
-        // Update state with the result.
-        return this.setState({ storageValue: result.c[0] })
-      })
-    })
+      this.setState({ loaded: true })
+    } catch(error) {
+      console.log('Web3 Error', error)
+    }
   }
 
   render() {
-    return (
-      <div className="App">
-        <nav className="navbar pure-menu pure-menu-horizontal">
-            <a href="#" className="pure-menu-heading pure-menu-link">Truffle Box</a>
-        </nav>
+    if (!this.state.loaded)
+      return (<Loader/>)
 
-        <main className="container">
-          <div className="pure-g">
-            <div className="pure-u-1-1">
-              <h1>Good to Go!</h1>
-              <p>Your Truffle Box is installed and ready.</p>
-              <h2>Smart Contract Example</h2>
-              <p>If your contracts compiled and migrated successfully, below will show a stored value of 5 (by default).</p>
-              <p>Try changing the value stored on <strong>line 59</strong> of App.js.</p>
-              <p>The stored value is: {this.state.storageValue}</p>
-            </div>
-          </div>
-        </main>
+    return (
+      <div>
+        <Navbar color="light" light expand="md">
+          <NavbarBrand href="/"><img src="cgt-logo-with-name.png" alt="logo" height="28px"/></NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/components/">Components</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="https://github.com/cancergenetrust">GitHub</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+        <Container>
+          <Table>
+            <thead>
+              <tr>
+                <th>Ethereum Address</th>
+                <th>IPFS Hash</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.stewards.map(steward =>
+                <tr key={steward.address}>
+                  <td>{steward.address}</td>
+                  <td>{steward.ipfsHash}</td>
+                  <td></td>
+                </tr>)}
+            </tbody>
+          </Table>
+        </Container>
       </div>
     );
   }
