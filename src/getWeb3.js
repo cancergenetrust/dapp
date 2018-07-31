@@ -13,7 +13,7 @@ const resolveWeb3 = (resolve) => {
     // const provider = new Web3.providers.HttpProvider(`http://localhost:9545`)
     const provider = new Web3.providers.HttpProvider(`https://rinkeby.infura.io/`)
     web3 = new Web3(provider)
-    console.log(`No web3 instance injected, using Local web3.`)
+    console.log(`No web3 instance injected, using Infura Rinkeby web3.`)
     resolve(web3)
   }
 }
