@@ -1,10 +1,5 @@
 import React, {Component} from 'react'
 import Loader from 'react-loader'
-import {
-  Container, 
-  ListGroup,
-  ListGroupItem,
-} from 'reactstrap'
 
 class Submission extends Component {
   constructor(props) {
@@ -24,13 +19,42 @@ class Submission extends Component {
   render() {
     if (!this.state.submission) return (<Loader />)
     return (
-      <Container>
-        <ListGroup>
-        {this.state.submission.files.map(file =>
-          <ListGroupItem key={file.multihash}>{file.name}</ListGroupItem>
-        )}
-        </ListGroup>
-      </Container>
+      <div>
+        <div className="card">
+          <div className="card-header">
+          Files
+          </div>
+          <ul className="list-group list-group-flush" style={{height: '100px', overflowY: 'auto'}}>
+          {this.state.submission.files.map(file =>
+            <li key={file.multihash} className="list-group-item">
+              <a href={`https://ipfs.io/ipfs/${file.multihash}`}>{file.name}</a>
+              {file.name.endsWith('.vcf') &&
+              <a class="font-weight-bold m-r-8" target="_blank"
+                href={"http://genome.ucsc.edu/cgi-bin/hgTracks?hgt.customText="
+                  + "https://ipfs.io/ipfs/" + file.multihash}>&nbsp;View In Browser</a>
+              }
+              {file.name.endsWith('.dcm') &&
+              <a class="font-weight-bold m-r-8" target="_blank"
+                href={"https://ivmartel.github.io/dwv-jqmobile/demo/stable/index.html?input="
+                  + encodeURIComponent("https://ipfs.io/ipfs/") + file.multihash}>&nbsp;View</a>
+              }
+            </li>
+          )}
+          </ul>
+        </div>
+        <div className="card">
+          <div className="card-header">
+          Fields
+          </div>
+          <ul className="list-group list-group-flush">
+          {Object.keys(this.state.submission.fields).map(key =>
+            <li key={key} className="list-group-item">
+              {key.charAt(0).toUpperCase() + key.slice(1)}: {this.state.submission.fields[key]}
+            </li>
+          )}
+          </ul>
+        </div>
+      </div>
     )
   }
 }

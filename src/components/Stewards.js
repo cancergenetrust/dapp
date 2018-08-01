@@ -1,8 +1,5 @@
 import React, {Component} from 'react'
-import {
-  Container, 
-  Table,
-} from 'reactstrap'
+import { Link } from 'react-router-dom'
 
 class Stewards extends Component {
   constructor(props) {
@@ -29,28 +26,27 @@ class Stewards extends Component {
 
   render() {
     return (
-      <Container>
-        <Table>
-          <thead>
-            <tr>
-              <th>Domain</th>
-              <th>Ethereum Address</th>
-              <th># Submissions</th>
-              <th>IPFS Hash</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.stewards.map(steward =>
-              <tr key={steward.address}>
-                <td>{steward.index.domain}</td>
-                <td>{steward.address}</td>
-                <td>{steward.index.submissions.length}</td>
-                <td>{steward.ipfsHash}</td>
-                <td></td>
-              </tr>)}
-          </tbody>
-        </Table>
-      </Container>
+      <div>
+        {this.state.stewards.map(steward =>
+        <div className="card" key={steward.address}>
+          <div className="card-header">
+            <h3>{steward.index.domain}</h3>
+            <h6>Ethereum Address:&nbsp;
+              <a href={`https://rinkeby.etherscan.io/address/${steward.address}`}
+                target="_blank">{steward.address}</a>
+            </h6>
+            <h6>IPFS Hash:&nbsp;
+              <a href={`https://ipfs.io/ipfs/${steward.ipfsHash}`} target="_blank">{steward.ipfsHash}</a>
+            </h6>
+          </div>
+          <ul className="list-group list-group-flush">
+          {steward.index.submissions.map(hash =>
+            <li key={hash} className="list-group-item"><Link to={`/submissions/${hash}`}>{hash}</Link></li>
+          )}
+          </ul>
+        </div>
+        )}
+      </div>
     )
   }
 }

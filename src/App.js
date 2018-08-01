@@ -1,6 +1,15 @@
 import React, {Component} from 'react'
 import Loader from 'react-loader'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+} from 'reactstrap'
 
 import Stewards from './components/Stewards'
 import Submission from './components/Submission'
@@ -11,7 +20,7 @@ import getWeb3 from './getWeb3'
 const truffleContract = require('truffle-contract')
 const stewardsContract = truffleContract(StewardsContract)
 
-const IPFS = require('ipfs-api');
+const IPFS = require('ipfs-api')
 
 const Home = () => (
   <div>
@@ -23,7 +32,10 @@ class App extends Component {
   constructor(props) {
     super(props)
 
+    this.toggle = this.toggle.bind(this)
+
     this.state = {
+      isOpen: false,
 			loaded: false,
       web3: null,
       contract: null,
@@ -48,34 +60,45 @@ class App extends Component {
     }
   }
 
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+
+
   render() {
     if (!this.state.loaded) return (<Loader />)
 
     return (
-      <div>
-        <Router>
-          <div>
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/stewards">Stewards</Link>
-              </li>
-            </ul>
-
-            <Switch>
-              <Route path="/stewards" render={props => 
-                  <Stewards {...props} contract={this.state.contract} ipfs={this.state.ipfs} />}
-              />
-              <Route path="/submission/:hash" render={props => 
-                  <Submission {...props} ipfs={this.state.ipfs} />}
-              />
-							<Route component={Home} />
-            </Switch>
-          </div>
-        </Router>
-      </div>
+      <BrowserRouter>
+        <div>
+          <Navbar color="light" light expand="md">
+            <NavbarBrand tag={Link} to="/">
+              <img src="/cgt-logo-with-name.png" alt="logo" height="28px" />
+            </NavbarBrand>
+            <NavbarToggler onClick={this.toggle} />
+            <Collapse isOpen={this.state.isOpen} navbar>
+              <Nav className="ml-auto" navbar>
+                <NavItem>
+                  <NavLink href="https://github.com/cancergenetrust" target="_blank">
+                    <img src="/github.png" alt="github" height="28px" />
+                  </NavLink>
+                </NavItem>
+              </Nav>
+            </Collapse>
+          </Navbar>
+          <Switch>
+            <Route exact path="/" render={props => 
+                <Stewards {...props} contract={this.state.contract} ipfs={this.state.ipfs} />}
+            />
+            <Route path="/submissions/:hash" render={props => 
+                <Submission {...props} ipfs={this.state.ipfs} />}
+            />
+            <Route path="/about" component={Home} />
+          </Switch>
+        </div>
+      </BrowserRouter>
     )
   }
 }
