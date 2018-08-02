@@ -20,8 +20,6 @@ import getWeb3 from './getWeb3'
 const truffleContract = require('truffle-contract')
 const stewardsContract = truffleContract(StewardsContract)
 
-const IPFS = require('ipfs-api')
-
 const Home = () => (
   <div>
     <h2>Home</h2>
@@ -52,7 +50,7 @@ class App extends Component {
       this.setState({ contract: await stewardsContract.deployed() })
       console.log(`Stewards contract address: ${this.state.contract.address}`)
 
-      this.setState({ ipfs: IPFS({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) })
+      this.setState({ ipfs: window.IpfsApi({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) })
 
       this.setState({ loaded: true })
     } catch(error) {
@@ -71,18 +69,18 @@ class App extends Component {
     if (!this.state.loaded) return (<Loader />)
 
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div>
           <Navbar color="light" light expand="md">
             <NavbarBrand tag={Link} to="/">
-              <img src="/cgt-logo-with-name.png" alt="logo" height="28px" />
+              <img src="cgt-logo-with-name.png" alt="logo" height="28px" />
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
                   <NavLink href="https://github.com/cancergenetrust" target="_blank">
-                    <img src="/github.png" alt="github" height="28px" />
+                    <img src="github.png" alt="github" height="28px" />
                   </NavLink>
                 </NavItem>
               </Nav>
