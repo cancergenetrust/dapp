@@ -1,14 +1,6 @@
 import React, {Component} from 'react'
 import Loader from 'react-loader'
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-} from 'reactstrap'
 
 import Markdown from './components/Markdown'
 
@@ -67,24 +59,21 @@ class App extends Component {
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <div>
-          <Navbar color="light" light expand="md">
-            <NavbarBrand tag={Link} to="/">
-              <img src="/cgt-logo-with-name.png" alt="logo" height="28px" />
-            </NavbarBrand>
-            <NavbarToggler onClick={this.toggle} />
-            <Collapse isOpen={this.state.isOpen} navbar>
-              <Nav className="ml-auto" navbar>
-                <NavItem>
-                  <Link to="/about">About</Link>
-                </NavItem>
-                <NavItem>
-                  <Link to="https://github.com/cancergenetrust" target="_blank">
-                    <img src="/github.png" alt="github" height="28px" />
-                  </Link>
-                </NavItem>
-              </Nav>
-            </Collapse>
-          </Navbar>
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <Link className="nav-link" to="/">
+              <img src="/cgt-logo-with-name.png" height="30" alt="Cancer Gene Trust"></img>
+            </Link>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <Link className="nav-link" to="/about">About</Link>
+                </li>
+              </ul>
+            </div>
+          </nav>
           <Switch>
             <Route exact path="/" render={props => 
                 <Stewards {...props} contract={this.state.contract} ipfs={this.state.ipfs} />}
