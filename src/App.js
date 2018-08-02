@@ -8,8 +8,9 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink,
 } from 'reactstrap'
+
+import Markdown from './components/Markdown'
 
 import Stewards from './components/Stewards'
 import Submission from './components/Submission'
@@ -20,11 +21,6 @@ import getWeb3 from './getWeb3'
 const truffleContract = require('truffle-contract')
 const stewardsContract = truffleContract(StewardsContract)
 
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-)
 
 class App extends Component {
   constructor(props) {
@@ -73,15 +69,18 @@ class App extends Component {
         <div>
           <Navbar color="light" light expand="md">
             <NavbarBrand tag={Link} to="/">
-              <img src="cgt-logo-with-name.png" alt="logo" height="28px" />
+              <img src="/cgt-logo-with-name.png" alt="logo" height="28px" />
             </NavbarBrand>
             <NavbarToggler onClick={this.toggle} />
             <Collapse isOpen={this.state.isOpen} navbar>
               <Nav className="ml-auto" navbar>
                 <NavItem>
-                  <NavLink href="https://github.com/cancergenetrust" target="_blank">
-                    <img src="github.png" alt="github" height="28px" />
-                  </NavLink>
+                  <Link to="/about">About</Link>
+                </NavItem>
+                <NavItem>
+                  <Link to="https://github.com/cancergenetrust" target="_blank">
+                    <img src="/github.png" alt="github" height="28px" />
+                  </Link>
                 </NavItem>
               </Nav>
             </Collapse>
@@ -90,10 +89,13 @@ class App extends Component {
             <Route exact path="/" render={props => 
                 <Stewards {...props} contract={this.state.contract} ipfs={this.state.ipfs} />}
             />
+            <Route exact path="/stewards" render={props => 
+                <Stewards {...props} contract={this.state.contract} ipfs={this.state.ipfs} />}
+            />
             <Route path="/submissions/:hash" render={props => 
                 <Submission {...props} ipfs={this.state.ipfs} />}
             />
-            <Route path="/about" component={Home} />
+            <Route path="/about" exact component={Markdown} />
           </Switch>
         </div>
       </BrowserRouter>
