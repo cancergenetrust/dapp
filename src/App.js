@@ -63,13 +63,20 @@ class App extends Component {
             <Link className="nav-link" to="/">
               <img src="/cgt-logo-with-name.png" height="30" alt="Cancer Gene Trust"></img>
             </Link>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button className="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/about">About</Link>
+                  <Link className="nav-link" to="/docs/about">About</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/docs/faq">FAQ</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/docs/resources">Resources</Link>
                 </li>
               </ul>
             </div>
@@ -84,7 +91,7 @@ class App extends Component {
             <Route path="/submissions/:hash" render={props => 
                 <Submission {...props} ipfs={this.state.ipfs} />}
             />
-            <Route path="/about" exact component={Markdown} />
+            <Route path="/docs/:name" component={Markdown} />
           </Switch>
         </div>
       </BrowserRouter>

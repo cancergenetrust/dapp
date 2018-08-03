@@ -11,7 +11,6 @@ class Submission extends Component {
   }
 
   async componentWillMount() {
-		console.log(this.props.match.params.hash)
     const submission = JSON.parse(await this.props.ipfs.files.cat(this.props.match.params.hash))
     this.setState({ submission })
   }

@@ -19,6 +19,14 @@ class Stewards extends Component {
       const ipfsHash = await this.props.contract.ipfsHashes(address)
       const index = JSON.parse(await this.props.ipfs.files.cat(ipfsHash))
 
+      // We'd like to do this and have a single Promise.all but js ipfs but it throws errors
+      // const submissions = index.submissions.map(async hash => JSON.parse(await this.props.ipfs.files.cat(hash)))
+      // var submissions = []
+      // for (var j = 0; j < index.submissions.length; j++) {
+      //   const response = await this.props.ipfs.files.cat(index.submissions[j])
+      //   submissions.push(response.json)
+      // }
+     
       stewards.push({address: address, ipfsHash: ipfsHash, index: index})
     }
     this.setState({ stewards })
@@ -26,7 +34,7 @@ class Stewards extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         {this.state.stewards.map(steward =>
         <div className="card" key={steward.address}>
           <div className="card-header">
