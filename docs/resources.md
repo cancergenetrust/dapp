@@ -14,7 +14,7 @@
 
 **Questions, Suggestions, Help**
 
-[GitHub Issue Tracker](https://github.com/cancergenetrust/dapp/issues/new)
+[GitHub Issue Tracker](https://github.com/cancergenetrust/org/issues/new)
 
 **Contributors**
 
