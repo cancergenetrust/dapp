@@ -32,7 +32,7 @@ class App extends Component {
   async componentWillMount() {
     try {
       this.setState({ web3: await getWeb3() })
-      console.log(`My account: ${this.state.web3.eth.accounts[0]}`)
+      console.log(`Your account: ${this.state.web3.eth.accounts[0]}`)
       stewardsContract.setProvider(this.state.web3.currentProvider)
 
       this.setState({ contract: await stewardsContract.deployed() })
