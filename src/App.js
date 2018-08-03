@@ -2,8 +2,6 @@ import React, {Component} from 'react'
 import Loader from 'react-loader'
 import { BrowserRouter, Route, Link, Switch } from 'react-router-dom'
 
-import Markdown from './components/Markdown'
-
 import Stewards from './components/Stewards'
 import Submission from './components/Submission'
 
@@ -70,13 +68,13 @@ class App extends Component {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link className="nav-link" to="/docs/about">About</Link>
+                  <a className="nav-link" href="https://github.com/cancergenetrust/org" target="_blank">About</a>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/docs/faq">FAQ</Link>
+                  <a className="nav-link" href="https://github.com/cancergenetrust/org/blob/master/faq.md" target="_blank">FAQ</a>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/docs/resources">Resources</Link>
+                  <a className="nav-link" href="https://github.com/cancergenetrust/org/blob/master/resources.md" target="_blank">Resources</a>
                 </li>
               </ul>
             </div>
@@ -91,7 +89,6 @@ class App extends Component {
             <Route path="/submissions/:hash" render={props => 
                 <Submission {...props} ipfs={this.state.ipfs} />}
             />
-            <Route path="/docs/:name" component={Markdown} />
           </Switch>
         </div>
       </BrowserRouter>
