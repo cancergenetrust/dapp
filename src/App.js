@@ -11,15 +11,11 @@ import getWeb3 from './getWeb3'
 const truffleContract = require('truffle-contract')
 const stewardsContract = truffleContract(StewardsContract)
 
-
 class App extends Component {
   constructor(props) {
     super(props)
 
-    this.toggle = this.toggle.bind(this)
-
     this.state = {
-      isOpen: false,
 			loaded: false,
       web3: null,
       contract: null,
@@ -44,13 +40,6 @@ class App extends Component {
     }
   }
 
-  toggle() {
-    this.setState({
-      isOpen: !this.state.isOpen
-    });
-  }
-
-
   render() {
     if (!this.state.loaded) return (<Loader />)
 
@@ -68,22 +57,22 @@ class App extends Component {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <a className="nav-link" href="https://github.com/cancergenetrust/org" target="_blank">About</a>
+                  <a className="nav-link" target="_blank"
+                    href="https://github.com/cancergenetrust/org">About</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="https://github.com/cancergenetrust/org/blob/master/faq.md" target="_blank">FAQ</a>
+                  <a className="nav-link" target="_blank"
+                    href="https://github.com/cancergenetrust/org/blob/master/faq.md">FAQ</a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="https://github.com/cancergenetrust/org/blob/master/resources.md" target="_blank">Resources</a>
+                  <a className="nav-link" target="_blank"
+                    href="https://github.com/cancergenetrust/org/blob/master/resources.md">Resources</a>
                 </li>
               </ul>
             </div>
           </nav>
           <Switch>
             <Route exact path="/" render={props => 
-                <Stewards {...props} contract={this.state.contract} ipfs={this.state.ipfs} />}
-            />
-            <Route exact path="/stewards" render={props => 
                 <Stewards {...props} contract={this.state.contract} ipfs={this.state.ipfs} />}
             />
             <Route path="/submissions/:hash" render={props => 
