@@ -44,16 +44,17 @@ class Steward extends Component {
         <ul className="list-group list-group-flush">
           <div className="card-body">
           {Object.keys(this.state.patients).map(key =>
-            <li key={key} className="list-group-item">
-              <h4>Patient {key.slice(0,8)}&nbsp; 
+            <li key={key} className="list-group-item d-flex justify-content-between align-items-center">
+              Patient {key.slice(0,8)}
+              <div>
               {this.state.patients[key].map(submission =>
-                <Link key={submission.hash} to={`/submissions/${submission.hash}`}>
-                  <button type="button" className="btn btn-primary">
-                    <span className="badge badge-light">{submission.files.length}</span> Files
-                  </button>&nbsp; 
-                </Link>
+                  <Link key={submission.hash} to={`/submissions/${submission.hash}`}>
+                    <span className="badge badge-primary badge-pill float-right ml-2">
+                        {submission.files.length}
+                    </span>
+                  </Link>
               )}
-              </h4>
+              </div>
             </li>
           )}
           </div>
