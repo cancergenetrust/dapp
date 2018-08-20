@@ -17,7 +17,7 @@ class Steward extends Component {
 
     var patients = {}
     for (var i = 0; i < this.state.index.submissions.length; i++) {
-      const response = await fetch(`https://ipfs.io/ipfs/${this.state.index.submissions[i]}`)
+      const response = await fetch(`https://ipfs.infura.io/ipfs/${this.state.index.submissions[i]}`)
       const submission = {...await response.json(), hash: this.state.index.submissions[i]}
 
       if (!(submission.fields["CGT Public ID"] in patients)) patients[submission.fields["CGT Public ID"]] = []
@@ -38,7 +38,7 @@ class Steward extends Component {
               target="_blank">{this.props.address}</a>
           </h6>
           <h6>IPFS Hash:&nbsp;
-            <a href={`https://ipfs.io/ipfs/${this.props.hash}`} target="_blank">{this.props.hash}</a>
+            <a href={`https://ipfs.infura.io/ipfs/${this.props.hash}`} target="_blank">{this.props.hash}</a>
           </h6>
         </div>
         <ul className="list-group list-group-flush">

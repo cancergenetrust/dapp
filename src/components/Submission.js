@@ -26,16 +26,16 @@ class Submission extends Component {
           <ul className="list-group list-group-flush" style={{height: '100px', overflowY: 'auto'}}>
           {this.state.submission.files.map(file =>
             <li key={file.multihash} className="list-group-item">
-              <a href={`https://ipfs.io/ipfs/${file.multihash}`}>{file.name}</a>
+              <a href={`https://ipfs.infura.io/ipfs/${file.multihash}`}>{file.name}</a>
               {file.name.endsWith('.vcf') &&
               <a className="font-weight-bold m-r-8" target="_blank"
                 href={"http://genome.ucsc.edu/cgi-bin/hgTracks?hgt.customText="
-                  + "https://ipfs.io/ipfs/" + file.multihash}>&nbsp;View In Browser</a>
+                  + "https://ipfs.infura.io/ipfs/" + file.multihash}>&nbsp;View In Browser</a>
               }
               {file.name.endsWith('.dcm') &&
               <a className="font-weight-bold m-r-8" target="_blank"
                 href={"https://ivmartel.github.io/dwv-jqmobile/demo/stable/index.html?input="
-                  + encodeURIComponent("https://ipfs.io/ipfs/") + file.multihash}>&nbsp;View</a>
+                  + encodeURIComponent("https://ipfs.infura.io/ipfs/") + file.multihash}>&nbsp;View</a>
               }
             </li>
           )}
