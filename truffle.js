@@ -10,7 +10,7 @@ module.exports = {
       port: 7545,
       network_id: "*"
     },
-    rinkeby: {
+    test: {
       provider: function() {
         return new HDWalletProvider(
           process.env.MNEMONIC,

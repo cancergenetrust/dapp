@@ -50,7 +50,10 @@ class Steward extends Component {
               {this.state.patients[key].map(submission =>
                   <Link key={submission.hash} to={`/submissions/${submission.hash}`}>
                     <span className="badge badge-primary badge-pill float-right ml-2">
-                        {submission.files.length}
+                        {submission.files.length} 
+                        {submission.files[0].name.endsWith('.vcf') && " Genomic (VCF)"}
+                        {submission.files[0].name.endsWith('.dcm') && " Imaging (DICOM)"}
+                        {submission.files[0].name === 'foundationone.json' && " Genomic (Foundation)"}
                     </span>
                   </Link>
               )}
