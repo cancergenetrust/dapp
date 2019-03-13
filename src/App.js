@@ -22,6 +22,7 @@ class   App extends Component {
 			loaded: false,
       web3: null,
       contract: null,
+      ipfsURL: null,
       ipfs: null,
     }
   }
@@ -29,13 +30,20 @@ class   App extends Component {
   async componentWillMount() {
     try {
       this.setState({ web3: await getWeb3() })
-      console.log(`Your account: ${this.state.web3.eth.accounts[0]}`)
+      console.log(`Your account: ${this.state.web3.eth.accounts[0] }`)
       stewardsContract.setProvider(this.state.web3.currentProvider)
 
       this.setState({ contract: await stewardsContract.deployed() })
-      console.log(`Stewards contract address: ${this.state.contract.address}`)
+      console.log(`Stewards contract address: ${this.state.contract.address }`)
 
-      this.setState({ ipfs: window.IpfsApi({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) })
+      if (window.location.hostname === "localhost") {
+        console.log("WARNING: Accessing ipfs@localhost for development")
+        this.setState({ ipfsURL: "http://localhost:8080/ipfs/" })
+        this.setState({ ipfs: window.IpfsApi({ host: 'localhost', port: 5001, protocol: 'http' }) })
+      } else {
+        this.setState({ ipfsURL: "https://ipfs.infura.io/ipfs/" })
+        this.setState({ ipfs: window.IpfsApi({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) })
+      }
 
       this.setState({ loaded: true })
     } catch(error) {
@@ -74,10 +82,10 @@ class   App extends Component {
           </nav>
           <Switch>
             <Route exact path="/" render={props => 
-                <Stewards {...props} contract={this.state.contract} ipfs={this.state.ipfs} />}
+                <Stewards {...props} contract={this.state.contract} ipfs={this.state.ipfs} ipfsURL={this.state.ipfsURL} />}
             />
             <Route path="/submissions/:hash" render={props => 
-                <Submission {...props} ipfs={this.state.ipfs} />}
+                <Submission {...props} ipfs={this.state.ipfs} ipfsURL={this.state.ipfsURL}/>}
             />
             <Route path="/docs/:name" component={Markdown} />
           </Switch>

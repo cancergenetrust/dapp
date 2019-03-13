@@ -26,29 +26,17 @@ class Submission extends Component {
           <ul className="list-group list-group-flush" style={{height: '100px', overflowY: 'auto'}}>
           {this.state.submission.files.map(file =>
             <li key={file.multihash} className="list-group-item">
-              <a href={`https://ipfs.infura.io/ipfs/${file.multihash}`}>{file.name}</a>
+              <a href={this.props.ipfsURL + file.multihash}>{file.name}</a>
               {file.name.endsWith('.vcf') &&
               <a className="font-weight-bold m-r-8" target="_blank"
                 href={"http://genome.ucsc.edu/cgi-bin/hgTracks?hgt.customText="
-                  + "https://ipfs.infura.io/ipfs/" + file.multihash}>&nbsp;View In Browser</a>
+                  + encodeURIComponent(this.props.ipfsURL) + file.multihash}>&nbsp;View In Browser</a>
               }
               {file.name.endsWith('.dcm') &&
               <a className="font-weight-bold m-r-8" target="_blank"
                 href={"https://ivmartel.github.io/dwv-jqmobile/demo/stable/index.html?input="
-                  + encodeURIComponent("https://ipfs.infura.io/ipfs/") + file.multihash}>&nbsp;View</a>
+                  + encodeURIComponent(this.props.ipfsURL) + file.multihash}>&nbsp;View</a>
               }
-            </li>
-          )}
-          </ul>
-        </div>
-        <div className="card">
-          <div className="card-header">
-          Fields
-          </div>
-          <ul className="list-group list-group-flush">
-          {Object.keys(this.state.submission.fields).map(key =>
-            <li key={key} className="list-group-item">
-              {key.charAt(0).toUpperCase() + key.slice(1)}: {this.state.submission.fields[key]}
             </li>
           )}
           </ul>

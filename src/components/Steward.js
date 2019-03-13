@@ -17,11 +17,11 @@ class Steward extends Component {
 
     var patients = {}
     for (var i = 0; i < this.state.index.submissions.length; i++) {
-      const response = await fetch(`https://ipfs.infura.io/ipfs/${this.state.index.submissions[i]}`)
-      const submission = {...await response.json(), hash: this.state.index.submissions[i]}
+      const response = await this.props.ipfs.files.cat(this.state.index.submissions[i])
+      const submission = {...await JSON.parse(response), hash: this.state.index.submissions[i]}
 
-      if (!(submission.fields["CGT Public ID"] in patients)) patients[submission.fields["CGT Public ID"]] = []
-      patients[submission.fields["CGT Public ID"]].push(submission)
+      if (!(submission["cgt_id"] in patients)) patients[submission["cgt_id"]] = []
+      patients[submission["cgt_id"]].push(submission)
       this.setState({patients: patients})
     }
   }
