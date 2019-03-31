@@ -20,8 +20,10 @@ class Steward extends Component {
       const response = await this.props.ipfs.files.cat(this.state.index.submissions[i])
       const submission = {...await JSON.parse(response), hash: this.state.index.submissions[i]}
 
-      if (!(submission["cgt_id"] in patients)) patients[submission["cgt_id"]] = []
-      patients[submission["cgt_id"]].push(submission)
+      console.log(submission)
+
+      if (!(submission["publicId"] in patients)) patients[submission["publicId"]] = []
+      patients[submission["publicId"]].push(submission)
       this.setState({patients: patients})
     }
   }
@@ -35,10 +37,11 @@ class Steward extends Component {
           <h3>{this.state.index.domain}</h3>
           <h6>Ethereum Address:&nbsp;
             <a href={`https://rinkeby.etherscan.io/address/${this.props.address}`}
-              target="_blank">{this.props.address}</a>
+              target="_blank" rel="noopener noreferrer">{this.props.address}</a>
           </h6>
           <h6>IPFS Hash:&nbsp;
-            <a href={`https://ipfs.infura.io/ipfs/${this.props.hash}`} target="_blank">{this.props.hash}</a>
+            <a href={`https://ipfs.infura.io/ipfs/${this.props.hash}`}
+              target="_blank" rel="noopener noreferrer">{this.props.hash}</a>
           </h6>
         </div>
         <ul className="list-group list-group-flush">
@@ -51,9 +54,12 @@ class Steward extends Component {
                   <Link key={submission.hash} to={`/submissions/${submission.hash}`}>
                     <span className="badge badge-primary badge-pill float-right ml-2">
                         {submission.files.length} 
-                        {submission.files[0].name.endsWith('.vcf') && " Genomic (VCF)"}
-                        {submission.files[0].name.endsWith('.dcm') && " Imaging (DICOM)"}
-                        {submission.files[0].name === 'foundationone.json' && " Genomic (Foundation)"}
+                        {submission.files.filter(f => 
+                          /seer|omop/.test(f.name)).length ? " Clinical" : ""}
+                        {submission.files.filter(f => 
+                          /\.dcm|\.jpg|\.png/.test(f.name)).length ? " Imaging" : ""}
+                        {submission.files.filter(f => 
+                          /\.vcf|foundation/.test(f.name)).length ? " Genomic" : ""}
                     </span>
                   </Link>
               )}

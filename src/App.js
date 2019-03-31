@@ -7,7 +7,7 @@ import Markdown from './components/Markdown'
 import Stewards from './components/Stewards'
 import Submission from './components/Submission'
 
-import StewardsContract from '../build/contracts/Stewards.json'
+import StewardsContract from './contracts/Stewards.json'
 import getWeb3 from './getWeb3'
 
 const truffleContract = require('truffle-contract')
@@ -36,14 +36,8 @@ class   App extends Component {
       this.setState({ contract: await stewardsContract.deployed() })
       console.log(`Stewards contract address: ${this.state.contract.address }`)
 
-      if (window.location.hostname === "localhost") {
-        console.log("WARNING: Accessing ipfs@localhost for development")
-        this.setState({ ipfsURL: "http://localhost:8080/ipfs/" })
-        this.setState({ ipfs: window.IpfsApi({ host: 'localhost', port: 5001, protocol: 'http' }) })
-      } else {
-        this.setState({ ipfsURL: "https://ipfs.infura.io/ipfs/" })
-        this.setState({ ipfs: window.IpfsApi({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) })
-      }
+      this.setState({ ipfsURL: "https://ipfs.infura.io/ipfs/" })
+      this.setState({ ipfs: window.IpfsApi({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) })
 
       this.setState({ loaded: true })
     } catch(error) {

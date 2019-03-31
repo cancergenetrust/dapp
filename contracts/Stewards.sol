@@ -1,4 +1,4 @@
-pragma solidity 0.4.24;
+pragma solidity >=0.4.24 <0.6.0;
 
 contract Stewards {
 
@@ -9,7 +9,7 @@ contract Stewards {
       return addresses.length;
   }
 
-  function set(string _ipfsHash) public {
+  function set(string memory _ipfsHash) public {
     if (bytes(ipfsHashes[msg.sender]).length == 0) {
       addresses.push(msg.sender);
     }
