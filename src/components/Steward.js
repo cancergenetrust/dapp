@@ -8,7 +8,7 @@ class Steward extends Component {
 
     this.state = {
       index: null,
-      patients: {},
+      patients: {}, // submissions by patient public id
     }
   }
 
@@ -20,8 +20,7 @@ class Steward extends Component {
       const response = await this.props.ipfs.files.cat(this.state.index.submissions[i])
       const submission = {...await JSON.parse(response), hash: this.state.index.submissions[i]}
 
-      console.log(submission)
-
+      // Update submissions by patients dictionary
       if (!(submission["publicId"] in patients)) patients[submission["publicId"]] = []
       patients[submission["publicId"]].push(submission)
       this.setState({patients: patients})
@@ -53,13 +52,13 @@ class Steward extends Component {
               {this.state.patients[key].map(submission =>
                   <Link key={submission.hash} to={`/submissions/${submission.hash}`}>
                     <span className="badge badge-primary badge-pill float-right ml-2">
-                        {submission.files.length} 
                         {submission.files.filter(f => 
                           /seer|omop/.test(f.name)).length ? " Clinical" : ""}
                         {submission.files.filter(f => 
                           /\.dcm|\.jpg|\.png/.test(f.name)).length ? " Imaging" : ""}
                         {submission.files.filter(f => 
                           /\.vcf|foundation/.test(f.name)).length ? " Genomic" : ""}
+                        &nbsp;({submission.files.length})
                     </span>
                   </Link>
               )}

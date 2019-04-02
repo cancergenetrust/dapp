@@ -14,14 +14,14 @@ module.exports = {
     },
     ropsten: {
       provider: () => new HDWalletProvider(
-        process.env.MNENOMIC, "https://ropsten.infura.io/v3" + process.env.INFURA_API_KEY),
+        process.env.MNENOMIC, "https://ropsten.infura.io/v3/" + process.env.INFURA_API_KEY),
       network_id: 3,
       gas: 4700000,
       gasPrice: 100000000000
     },
     rinkeby: {
       provider: () => new HDWalletProvider(
-        process.env.MNENOMIC, "https://rinkeby.infura.io/v3" + process.env.INFURA_API_KEY),
+        process.env.MNENOMIC, "https://rinkeby.infura.io/v3/" + process.env.INFURA_API_KEY),
       network_id: 4,
       gas: 4500000,
       gasPrice: 10000000000,

@@ -15,7 +15,9 @@ deploy-dapp:
 	gh-pages -d build_webpack
 
 ganache:
-	npx ganache-cli --port 18545
+	# npx ganache-cli --port 18545
+	npx ganache-cli --deterministic --db ~/data/ganache --port 18545
+	# ganache-cli --db="./data/save/" -i="5777" -d --mnemonic="YOUR_12_WORDS_HERE"
 
 migrate:
 	# Reset and update our contract on the local/ganache network
