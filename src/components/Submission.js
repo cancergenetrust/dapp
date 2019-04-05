@@ -26,9 +26,9 @@ class Submission extends Component {
               <a href={`https://ipfs.infura.io/ipfs/${this.props.match.params.hash}`}
                 target="_blank" rel="noopener noreferrer">{this.props.match.params.hash}</a>
             </h6>
-            <h6>Patient Public ID: {this.state.submission.publicId}</h6>
-            {"daysFromBirth" in this.state.submission && 
-                <h6>Days From Birth: {this.state.submission.daysFromBirth}</h6>}
+            <h6>Patient Public ID: {this.state.submission.cgt_public_id}</h6>
+            {"days_from_birth" in this.state.submission && 
+                <h6>Days From Birth: {this.state.submission.days_from_birth}</h6>}
           </div>
 
           <ul className="list-group list-group-flush" style={{overflowY: 'auto'}}>

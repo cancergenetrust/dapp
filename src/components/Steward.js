@@ -21,8 +21,8 @@ class Steward extends Component {
       const submission = {...await JSON.parse(response), hash: this.state.index.submissions[i]}
 
       // Update submissions by patients dictionary
-      if (!(submission["publicId"] in patients)) patients[submission["publicId"]] = []
-      patients[submission["publicId"]].push(submission)
+      if (!(submission["cgt_public_id"] in patients)) patients[submission["cgt_public_id"]] = []
+      patients[submission["cgt_public_id"]].push(submission)
       this.setState({patients: patients})
     }
   }
