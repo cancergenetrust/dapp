@@ -13,6 +13,7 @@ class Steward extends Component {
   }
 
   async componentWillMount() {
+    console.log(this.props)
     this.setState({index: JSON.parse(await this.props.ipfs.files.cat(this.props.hash))})
 
     var patients = {}
