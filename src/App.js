@@ -14,7 +14,7 @@ const truffleContract = require('truffle-contract')
 const stewardsContract = truffleContract(StewardsContract)
 
 
-class   App extends Component {
+class App extends Component {
   constructor(props) {
     super(props)
 
@@ -42,7 +42,7 @@ class   App extends Component {
       this.setState({ loaded: true })
     } catch(error) {
       console.log('Web3 Error', error)
-      alert("Unable to load contract, are you on the Rinkeby Test Network?")
+      alert("Unable to load contract, are you using Chrome and on the Rinkeby Test Network?")
     }
   }
 

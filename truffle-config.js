@@ -8,19 +8,19 @@ module.exports = {
     local: {
       provider: () => new HDWalletProvider(
         process.env.CGT_TEST_MNENOMIC, "http://127.0.0.1:18545"),
-      network_id: 999,
+      network_id: "*",
     },
     cgt_rinkeby: {
       provider: () => new HDWalletProvider(
         process.env.CGT_PRODUCTION_MNENOMIC, "https://rinkeby.infura.io/v3/" + process.env.INFURA_API_KEY),
-      network_id: 4,
+      network_id: "4",
       gas: 4500000,
       gasPrice: 10000000000
     },
     ucsf_rinkeby: {
       provider: () => new HDWalletProvider(
         process.env.UCSF_PRODUCTION_MNENOMIC, "https://rinkeby.infura.io/v3/" + process.env.INFURA_API_KEY),
-      network_id: 4,
+      network_id: "4",
       gas: 4500000,
       gasPrice: 10000000000
     }

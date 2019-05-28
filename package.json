@@ -4,14 +4,14 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-loader": "^2.4.5",
     "react-markdown": "^4.0.6",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "2.1.8",
-    "truffle-contract": "^4.0.11",
+    "react-scripts": "^3.0.1",
+    "truffle-contract": "^4.0.17",
     "web3": "^1.0.0-beta.37"
   },
   "eslintConfig": {
@@ -25,12 +25,12 @@
   ],
   "devDependencies": {
     "dotenv": "^7.0.0",
-    "ganache-cli": "^6.4.1",
+    "ganache-cli": "^6.4.3",
     "gh-pages": "^2.0.1",
     "npm-check-updates": "^3.1.3",
     "serve": "^11.0.0",
-    "truffle": "^5.0.14",
-    "truffle-hdwallet-provider": "^1.0.6"
+    "truffle": "^5.0.19",
+    "truffle-hdwallet-provider": "^1.0.9"
   },
   "scripts": {
     "start": "PORT=18500 react-scripts start",

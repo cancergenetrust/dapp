@@ -18,8 +18,7 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0xe1e322ed"
+      "type": "function"
     },
     {
       "constant": true,
@@ -38,8 +37,7 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0xedf26d9b"
+      "type": "function"
     },
     {
       "constant": true,
@@ -53,8 +51,7 @@
       ],
       "payable": false,
       "stateMutability": "view",
-      "type": "function",
-      "signature": "0x949d225d"
+      "type": "function"
     },
     {
       "constant": false,
@@ -68,8 +65,7 @@
       "outputs": [],
       "payable": false,
       "stateMutability": "nonpayable",
-      "type": "function",
-      "signature": "0x4ed3885e"
+      "type": "function"
     }
   ],
   "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"name\":\"_ipfsHash\",\"type\":\"string\"}],\"name\":\"set\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"size\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"ipfsHashes\",\"outputs\":[{\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"addresses\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/public/home/rcurrie/dapp/contracts/Stewards.sol\":\"Stewards\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/public/home/rcurrie/dapp/contracts/Stewards.sol\":{\"keccak256\":\"0x8ce160975ecffaff76ad478845fb5a8796e982243003a854f02d3510ff1d5e5e\",\"urls\":[\"bzzr://3d1f5a9bc9504d9cad4999f860e59add84a92a059d13ebbe06207bc0a37b8487\"]}},\"version\":1}",
@@ -1319,18 +1315,18 @@
     "4": {
       "events": {},
       "links": {},
-      "address": "0xB0C35b9795C22214816951c4bcB7Fd967930b88c",
-      "transactionHash": "0x20b76421978f89406c4ad8d5aef41b8bcc948abdd337fe0f80a0c221095e0c4e"
+      "address": "0xeAc223c309E575462a57c86095ce6379E0D1a639",
+      "transactionHash": "0x4f7805bac3555feb492f9d1f323f688a4e96ce5587bf3310a48882d14e08484f"
     },
     "999": {
       "events": {},
       "links": {},
-      "address": "0xf00Cf9862f499bbf577d02Ff17Bb11530454808c",
-      "transactionHash": "0x5d09ce96ff6108a076ae5dd2bb741bdd34623e8fad762d15cc74e92134dca417"
+      "address": "0x4Bd5F5Ed59E19f853763560965Aa23e646217a87",
+      "transactionHash": "0xb54e96d363c033e094ee3d7efa37e01278f2ef7f925a9318313c7030230a150d"
     }
   },
-  "schemaVersion": "3.0.8",
-  "updatedAt": "2019-05-01T00:19:43.936Z",
+  "schemaVersion": "3.0.9",
+  "updatedAt": "2019-05-28T22:07:00.489Z",
   "devdoc": {
     "methods": {}
   },

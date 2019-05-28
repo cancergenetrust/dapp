@@ -13,7 +13,6 @@ class Steward extends Component {
   }
 
   async componentWillMount() {
-    console.log(this.props)
     this.setState({index: JSON.parse(await this.props.ipfs.files.cat(this.props.hash))})
 
     var patients = {}
@@ -46,7 +45,7 @@ class Steward extends Component {
         </div>
         <ul className="list-group list-group-flush">
           <div className="card-body">
-          {Object.keys(this.state.patients).map(key =>
+          {Object.keys(this.state.patients).sort().map(key =>
             <li key={key} className="list-group-item d-flex justify-content-between align-items-center">
               Patient {key.slice(0,8)}
               <div>
