@@ -41,8 +41,8 @@ truffle-console-rinkeby:
 
 migrate-local:
 	# Reset and update our contract on the local/ganache network
-	npx truffle migrate --reset --network local
+	npx truffle migrate --network local
 
 migrate-rinkeby:
 	# Reset and update our contract on the local/ganache network
-	npx truffle migrate --reset --network cgt_rinkeby
+	npx truffle migrate --network cgt_rinkeby
