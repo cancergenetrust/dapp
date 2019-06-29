@@ -9,6 +9,10 @@ debug:
 	# Start a local server with dynamic reloading
 	npm start
 
+test-contracts:
+	# Test our contracts
+	npx truffle test
+
 run:
 	# Run the build version locally
 	npx serve -s build -l tcp://127.0.0.1:18500
@@ -36,8 +40,11 @@ truffle-console-local:
 	# app.set("QmYtrPfa9fpFzG2YTFRW8jxVA8Ry7ZEdADkLiatgdW5iXY")
 	npx truffle console --network local
 
-truffle-console-rinkeby:
+truffle-console-cgt-rinkeby:
 	npx truffle console --network cgt_rinkeby
+	
+truffle-console-ucsf-rinkeby:
+	npx truffle console --network ucsf_rinkeby
 
 migrate-local:
 	# Reset and update our contract on the local/ganache network
