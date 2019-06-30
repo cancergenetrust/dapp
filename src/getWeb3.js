@@ -7,7 +7,8 @@ const getWeb3 = () =>
       // Modern dapp browsers...
       if (window.ethereum) {
         console.log("window.ethereum detected...");
-        const web3 = new Web3(window.ethereum);
+        // const web3 = new Web3(window.ethereum);
+        const web3 = new Web3(window.web3.currentProvider);
         try {
           // Request account access if needed
           await window.ethereum.enable();
@@ -28,6 +29,7 @@ const getWeb3 = () =>
         console.log("No injected web3 detected, using integrated web3 connected to Rinkeby test network...");
         const provider = new Web3.providers.HttpProvider("https://rinkeby.infura.io");
         const web3 = new Web3(provider);
+        window.web3 = web3;
         resolve(web3);
       }
     });

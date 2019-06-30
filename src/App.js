@@ -30,11 +30,11 @@ class App extends Component {
   async componentWillMount() {
     try {
       this.setState({ web3: await getWeb3() })
-      console.log(`Your account: ${this.state.web3.eth.accounts[0] }`)
       stewardsContract.setProvider(this.state.web3.currentProvider)
 
       this.setState({ contract: await stewardsContract.deployed() })
-      console.log(`Stewards contract address: ${this.state.contract.address }`)
+      console.log(`Stewards contract address: ${ this.state.contract.address }`)
+      console.log(`Stewards founder address: ${ await this.state.contract.founder() }`)
 
       this.setState({ ipfsURL: "https://ipfs.infura.io/ipfs/" })
       this.setState({ ipfs: window.IpfsApi({ host: 'ipfs.infura.io', port: 5001, protocol: 'https' }) })

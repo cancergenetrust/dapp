@@ -12,13 +12,17 @@ class Stewards extends Component {
   }
 
   async componentWillMount() {
-    const numStewards = await this.props.contract.size.call()
-    console.log(`Found ${numStewards.toNumber()} stewards`)
+    const numStewards = await this.props.contract.getNumStewards()
+    console.log(`Found ${numStewards} stewards`)
     const stewards = []
-    for(var i=0; i < numStewards.toNumber(); i++) {
+    for(var i=0; i < numStewards; i++) {
       const address = await this.props.contract.addresses(i)
-      const ipfsHash = await this.props.contract.ipfsHashes(address)
-      stewards.push({address: address, hash: ipfsHash})
+      const ipfsHash = await this.props.contract.hashes(address)
+      if (ipfsHash === "nominated") {
+        console.log(`Steward ${address} nominated but no submissions yet`)
+      } else {
+        stewards.push({address: address, hash: ipfsHash})
+      }
     }
     this.setState({ stewards })
   }
