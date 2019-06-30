@@ -30,7 +30,7 @@ ganache:
 	# CGT Test Mnenomic  "tenant ripple trip improve hover thumb output toddler before token strategy pigeon"
 	# UCSF Private Key Local Debug: 0x5a1be6182eff7f23f677b0fdd77205c8e6a01ee0df450b45c117ea19ab2ae0e3
 	# 0x70e8dcf7a13621d4351249d2e2e31ced98649631
-	npx ganache-cli --port 18545 -i 999 -d -m "tenant ripple trip improve hover thumb output toddler before token strategy pigeon"
+	npx ganache-cli --port 18545 -i 999 -d -a 2 -m "tenant ripple trip improve hover thumb output toddler before token strategy pigeon"
 
 truffle-console-local:
 	# Open truffle console and connect to local ethereum node

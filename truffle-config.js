@@ -5,10 +5,10 @@ const path = require("path");
 module.exports = {
   contracts_build_directory: path.join(__dirname, "src/contracts"),
   networks: {
-    local: {
-      provider: () => new HDWalletProvider(
-        process.env.CGT_TEST_MNENOMIC, "http://127.0.0.1:18545"),
-      network_id: "*",
+    develop: {
+      host: "127.0.0.1",
+      port: 18545,
+      network_id: "*"
     },
     cgt_rinkeby: {
       provider: () => new HDWalletProvider(
