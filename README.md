@@ -5,4 +5,23 @@
 Stewards maintain submissions in [IPFS](https://ipfs.io) and submit the top level hash to a contract on the Ethereum blockchain. Submissions consist of a JSON manifest with a list of files. Files typically consist of somatic variant vcf files and gene expression tsv file. Manifest's and files are stored and referenced by the [multihash](https://github.com/multiformats/multihash) of their content. Eash steward has a top level JSON index file containing it's dns domain, list of submissions by multihash. A steward's address is the account they use to update their top level hash via a contract on the Ethereum blockchain. This provides authentication and authorization for its submissions as well as any other content referenced via multihash within it including all submissions. 
 
 # ĐApp
-This prototype ĐApp currently only allows browsing submissions. Submitting data is via IPFS or the Submit repo which will eventually be folded into this application.
+The prototype ĐApp currently only allows browsing submissions. Submitting data is via IPFS or the Submit repo which will eventually be folded into this application and manual contract interaction outlined below and in the code.
+
+# Development
+To run and debug the ĐApp along with a local ethereum test chain:
+
+```
+# Install all the npm modules
+npm install
+
+# Start a local test Ethereum chain
+make ganache
+
+# Deploy the contract to the chain
+make migrate-local
+
+# Nominate and make the first steward submission
+npx truffle exec init.js --network local
+
+# Run the application
+make debug
