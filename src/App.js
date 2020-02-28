@@ -42,7 +42,7 @@ class App extends Component {
       this.setState({ loaded: true })
     } catch(error) {
       console.log('Web3 Error', error)
-      alert("Unable to load contract, is using MetaMask on the Rinkeby test network?")
+      alert("Unable to load contract, are you using MetaMask on the Rinkeby test network?")
     }
   }
 

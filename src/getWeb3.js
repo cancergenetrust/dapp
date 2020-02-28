@@ -1,5 +1,7 @@
 import Web3 from "web3";
 
+const INFURA_PROJECT_ID = "a5f421eac484439f916e84404f937a40";
+
 const getWeb3 = () =>
   new Promise((resolve, reject) => {
     // Wait for loading completion to avoid race conditions with web3 injection timing.
@@ -20,7 +22,7 @@ const getWeb3 = () =>
       // If no metamastk then default to rinkeby now, main net later
       else {
         console.log("No injected web3 detected, using integrated web3 connected to Rinkeby test network...");
-        const provider = new Web3.providers.HttpProvider("https://rinkeby.infura.io");
+        const provider = new Web3.providers.HttpProvider(`https://rinkeby.infura.io/v3/${INFURA_PROJECT_ID}`);
         const web3 = new Web3(provider);
         window.web3 = web3;
         resolve(web3);
